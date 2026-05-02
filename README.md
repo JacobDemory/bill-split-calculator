@@ -7,7 +7,7 @@ This project was built to practice clean Python design, user input validation, a
 ---
 
 ## Features
-Latest change is in **bold**
+Recent additions are in **bold**
 - Calculates the total bill with tip included
 - Supports **even splitting** or **uneven splitting with custom amounts, with the remainder split evenly**
 - Tracks amounts owed by **named individuals**
