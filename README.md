@@ -1,6 +1,6 @@
 # Bill Splitting Calculator
 
-A powerful Python tool to split restaurant bills among friends with customizable options. Calculate tips, assign amounts to named individuals, and save results effortlessly!
+A Python command-line tool to split restaurant bills among friends with customizable options. Calculate tips, assign amounts to named individuals, and save results effortlessly.
 
 This project was built to practice clean Python design, user input validation, and building a practical CLI tool that solves a real-world problem.
 
@@ -135,12 +135,3 @@ python3 -m pytest
 - Support multiple currency formats
 - Include tax calculation support
 - Export breakdowns as CSV
-
----
-
-## Contributing
-Feel free to fork this project, submit pull requests, or open issues for bugs and feature suggestions!  
-
----
-
-Built with ❤️ by Jacob
