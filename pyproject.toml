@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bill-split-calculator"
+version = "1.0.0"
+description = "A command-line bill splitting utility with even and custom allocations."
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

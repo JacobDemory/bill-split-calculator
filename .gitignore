@@ -5,4 +5,5 @@ __pycache__/
 venv/
 env/
 .DS_Store
-*.txt
+bill-*.txt
+output-*.txt

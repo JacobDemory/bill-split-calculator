@@ -46,3 +46,30 @@ def test_apply_rounding_keeps_total_accurate():
     total = sum(amount for _, amount, _ in result)
 
     assert total == 31
+
+
+def test_round_up_keeps_a_cent_based_total_accurate():
+    breakdown = [
+        ("Jacob", 20.50, ""),
+        ("Jay", 20.50, ""),
+        ("Nick", 20.50, ""),
+    ]
+
+    result = apply_rounding(breakdown, 61.50, round_up=True)
+
+    assert sum(amount for _, amount, _ in result) == 61.50
+    assert result[-1][1] == 19.50
+    assert result[-1][2] == " (adjusted to match total)"
+
+
+def test_round_up_never_creates_a_negative_final_share():
+    breakdown = [
+        ("Jacob", 0.34, ""),
+        ("Jay", 0.33, ""),
+        ("Nick", 0.33, ""),
+    ]
+
+    result = apply_rounding(breakdown, 1.00, round_up=True)
+
+    assert sum(amount for _, amount, _ in result) == 1.00
+    assert all(amount >= 0 for _, amount, _ in result)

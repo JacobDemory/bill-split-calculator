@@ -88,7 +88,8 @@ def apply_rounding(breakdown, total, round_up=False):
 
         if not is_last_person:
             if round_up:
-                rounded_amount = math.ceil(amount)
+                remaining_available = max(0, round(total - running_total, 2))
+                rounded_amount = min(math.ceil(amount), remaining_available)
                 note = " (rounded up to nearest dollar)"
             else:
                 rounded_amount = round(amount, 2)
@@ -98,8 +99,8 @@ def apply_rounding(breakdown, total, round_up=False):
             running_total += rounded_amount
         else:
             if round_up:
-                rounded_amount = math.ceil(total - running_total)
-                note = " (adjusted and rounded up to nearest dollar)"
+                rounded_amount = round(total - running_total, 2)
+                note = " (adjusted to match total)"
             else:
                 rounded_amount = round(total - running_total, 2)
                 expected_amount = round(amount, 2)
